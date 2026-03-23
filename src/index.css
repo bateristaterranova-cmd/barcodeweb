@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #7b39fc;
+  --color-dark: #2b2344;
+  --color-dark-bg: rgba(43, 35, 68, 0.9);
+  
+  --font-manrope: "Manrope", sans-serif;
+  --font-cabin: "Cabin", sans-serif;
+  --font-instrument: "Instrument Serif", serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+@layer base {
+  :root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+  }
+  .dark {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+  }
+  
+  html, body {
+    @apply antialiased m-0 p-0 w-full h-full;
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+}
+
+@media print {
+  @page {
+    /* Set page size to thermal label size roughly */
+    size: 40mm 20mm;
+    margin: 0;
+  }
+  
+  body * {
+    visibility: hidden;
+  }
+  
+  #print-area, #print-area * {
+    visibility: visible;
+  }
+  
+  #print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40mm;
+    height: 20mm;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    background: white !important;
+    color: black !important;
+  }
+}
