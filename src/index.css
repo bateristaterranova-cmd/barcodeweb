@@ -46,7 +46,7 @@
     visibility: visible;
   }
   
-  #print-area {
+#print-area {
     position: absolute;
     left: 0;
     top: 0;
@@ -55,10 +55,28 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin: 0;
-    padding: 0;
+    padding: 1mm 0;
     background: white !important;
     color: black !important;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  #print-area svg {
+    width: 38mm !important; /* Slightly less than 40mm to ensure no clipping */
+    height: auto !important;
+    max-height: 14mm !important;
+  }
+  
+  #print-area .model-text {
+    font-family: 'Cabin', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 10px !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin-bottom: 0.5mm !important;
+    text-transform: uppercase;
   }
 }

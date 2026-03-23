@@ -131,8 +131,8 @@ export const GeneratorModal: React.FC<GeneratorModalProps> = ({ isOpen, onClose 
 
       {/* Print View 40x20mm */}
       <div id="print-area">
-        <svg ref={barcodePrintRef} style={{ width: '100%', maxHeight: '13mm', objectFit: 'contain' }}></svg>
-        <div style={{ fontFamily: '"Cabin", sans-serif', fontWeight: 500, fontSize: '11px', marginTop: '1mm', textAlign: 'center', lineHeight: 1, width: '100%' }}>
+        <svg ref={barcodePrintRef}></svg>
+        <div className="model-text">
           {productModel}
         </div>
       </div>
